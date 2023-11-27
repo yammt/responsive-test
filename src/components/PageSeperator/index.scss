@@ -1,0 +1,35 @@
+.page-seperator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    gap: 16px;
+
+    .page-seperator-name {
+        font-size: 32px;
+        width: auto;
+    }
+
+    .page-seperator-line {
+        border: 0.5px solid #f2f2f2;
+        height: 1px;
+        width: calc(100% - 350px);
+    }
+
+    .page-seperator-line-no-button {
+        border: 0.5px solid #f2f2f2;
+        height: 1px;
+        width: calc(100% - 300px);
+    }
+
+    .page-seperator-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px
+    }
+}
+
+

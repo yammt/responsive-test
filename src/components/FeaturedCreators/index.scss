@@ -1,0 +1,16 @@
+.feautred-creator {
+    gap: 6px;
+
+    .featured-creator-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        gap: 16px;
+    }
+}
+
+@media only screen and (max-width: 656px) {
+    .feautred-creator .featured-creator-list {
+        justify-content: center;
+    }
+}

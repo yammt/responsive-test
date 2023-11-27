@@ -1,0 +1,22 @@
+.jump-back-in  {
+    gap: 3px;
+}
+
+.images-container {
+    display: flex;
+    width: 100%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    transition: scroll 0.3s ease-in-out;
+  }
+
+  .images-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .image {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    border-radius: 8px;
+  }

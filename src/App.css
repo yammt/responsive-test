@@ -1,0 +1,19 @@
+.App {
+  padding: 64px 32px 32px 32px;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+}
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  height: 56px;
+  gap: 24px;
+}
+
+
+@media (max-width: 600px) {
+  .App {
+    padding: 60px 16px 18px 16px;
+  }
+}
