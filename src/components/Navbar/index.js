@@ -7,28 +7,27 @@ import Tab from "../Tab";
 import "./index.scss";
 
 const StyledButton = styled(Button)`
-    background-color: rgba(210, 55, 93, 1);
-    border-radius: 16px;
-    color: white;
-    width: 99px;
-    gap: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 16px;
-    height: 40px;
-    font-family: 'Urbanist', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    text-transform: none;
+  background-color: rgba(210, 55, 93, 1);
+  border-radius: 16px;
+  color: white;
+  width: 99px;
+  gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  height: 40px;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: none;
 
-    &:hover {
-      background-color:  rgba(210, 55, 93, 0.8) ;
+  &:hover {
+    background-color:  rgba(210, 55, 93, 0.8) ;
   }
 `
 
 const Navbar = () => {
-
   const tabList = [
     {
       icon: "/icon-discover.svg",
@@ -65,13 +64,12 @@ const Navbar = () => {
               <span>Home</span>
             </StyledButton>
             {
-              tabList.map((item, index) => (
+              tabList.map((item, index) =>
                 <Tab
                   key={index}
                   icon={item.icon}
                   tabName={item.tabName}
                 />
-              )
               )
             }
           </div>

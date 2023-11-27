@@ -1,7 +1,7 @@
 import React from "react";
-
 import PageSeperator from "../PageSeperator";
 import FeaturedCreatorCard from "../FeaturedCreatorCard";
+
 import "./index.scss";
 
 const FeaturedCreator = () => {

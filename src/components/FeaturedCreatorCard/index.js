@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@mui/material";
 import styled from "@emotion/styled";
+import { Slide } from "react-slideshow-image";
 
+import "react-slideshow-image/dist/styles.css";
 import "./index.scss";
 
 const SlideSection = styled.div`
@@ -9,11 +11,10 @@ const SlideSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url(${props => props.url});
+    background-image: url('${props => props.url}');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
-    border-radius: var(--corner-radius-rounded-2-xl, 16px) var(--corner-radius-rounded-2-xl, 16px) 0px 0px;
     padding: var(--space-4, 16px) var(--space-4, 16px) var(--spacing-2, 8px) var(--space-4, 16px);
     height: 312px;
 `;
@@ -56,35 +57,20 @@ const CreatorInfoFotterButton = (props) => {
 
 const FeaturedCreatorCard = (props) => {
     const { creatorData } = props
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const activeSlide = creatorData.images[currentIndex];
 
-    const handleSlideLeft = () => {
-        setCurrentIndex((prevCurrentIndex) => {
-            if(prevCurrentIndex === 0) return creatorData.images.length - 1;
-            else return prevCurrentIndex - 1;
-        })
-    }
+    const indicators = () => <div className="indicator" />;
 
-    const handleSlideRight = () => {
-        setCurrentIndex((prevCurrentIndex) => {
-            if(prevCurrentIndex == creatorData.images.length - 1) return 0;
-            else return prevCurrentIndex + 1;
-        })
-    }
-
-    // const modifyThirdIndicator = () => {
-    //     const indicators = document.querySelectorAll('.creator-card-slide-indicator .indicator');
-    //     const currentIndicator = indicators[currentIndex];
-    //     currentIndicator.style.backgroundColor = "red";
-    // };
-
-    // modifyThirdIndicator();
     return (
         <div className="creator-card">
-            <SlideSection
-                url={`"${activeSlide.toString()}"`}
-            >
+            <div className="creator-card-main">
+                <Slide arrows={false} autoplay={false} indicators={indicators}>
+                    {creatorData.images.map((item, ind) => 
+                        <SlideSection
+                            key={ind}
+                            url={item.toString()}
+                            />
+                    )}                
+                </Slide>
                 <div className="creator-card-slide-header">
                     <div className="creator-card-slide-favorite">
                         <img
@@ -95,26 +81,16 @@ const FeaturedCreatorCard = (props) => {
                     </div>
                 </div>
                 <div className="creator-card-slide-footer">
-                    <div className="creator-card-slide-indicator">
-                        { [ ...Array(5).keys() ].map( i => <div key={i} className={`indicator${i === currentIndex ? "-active" : "" }`}></div> )}
-                    </div>
-                    <div>
-                        <StyledButton>
-                            <img
-                                src="/icon-chat.svg"
-                                alt="home icon"
-                                width={"20px"}
-                            />
-                            <span>Chat</span>
-                        </StyledButton>
-                    </div>
+                    <StyledButton>
+                        <img
+                            src="/icon-chat.svg"
+                            alt="home icon"
+                            width={"20px"}
+                        />
+                        <span>Chat</span>
+                    </StyledButton>
                 </div>
-                <div className="slide-button-left" onClick={handleSlideLeft}>
-                </div>
-                <div className="slide-button-right" onClick={handleSlideRight}>
-                </div>
-
-            </SlideSection>
+            </div>
             <div className="creator-card-footer">
                 <div className="creator-name">
                     {creatorData.name}

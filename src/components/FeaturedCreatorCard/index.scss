@@ -7,20 +7,64 @@
     width: 286px;
     box-shadow: 0px 16px 40px -7px #0000000D;
 
-    .creator-card-slide-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-
-        .creator-card-slide-favorite {
+    .creator-card-main {
+        position: relative;
+        border-radius: 16px 16px 0 0;
+        overflow: hidden;
+        cursor: grab;
+        
+        .creator-card-slide-header {
+            position: absolute;
+            top: 16px;
+            right: 16px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 30px;
-            background: #f2f2f2;
-            width: 32px;
-            height: 32px;
+            flex-direction: row;
+            justify-content: end;
+
+            .creator-card-slide-favorite {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 30px;
+                background: #f2f2f2;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+            }
+        }
+        
+        .creator-card-slide-footer {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+        
+        .indicators {
+            position: absolute;
+            padding: 0;
+            margin: 0;    
+            bottom: 8px;
+            left: 16px;
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+            gap: 10px;
+            z-index: 1000;
+            cursor: pointer;
+
+            .indicator {
+                width: 6.6px;
+                height: 6.6px;
+                background-color: #f2f2f2;
+                border-radius: 7px;
+            }            
+            .indicator.active {
+                width: 6.6px;
+                height: 6.6px;
+                background-color: #D2375D;
+                border-radius: 7px;
+            }
         }
     }
 
@@ -42,46 +86,11 @@
         cursor: pointer;
     }
 
-    .creator-card-slide-footer {
-        display: flex;
-        flex-direction: row;
-        align-items: end;
-        justify-content: space-between;
-
-        .creator-card-slide-indicator {
-            display: flex;
-            flex-direction: row;
-            align-items: end;
-            gap: 10px;
-
-            .indicator {
-                width: 6.6px;
-                height: 6.6px;
-                background-color: #f2f2f2;
-                border-radius: 7px;
-            }            
-            .indicator-active {
-                width: 6.6px;
-                height: 6.6px;
-                background-color: #D2375D;
-                border-radius: 7px;
-            }
-            .highlighted {
-                background-color: #D2375D;
-            }
-            
-        }
-    }
-
     .creator-card-footer {
         display: flex;
         flex-direction: column;
         padding: 8px 16px;
 
-        .creator-name {
-
-        }
-        
         .creator-info {
             display: flex;
             flex-direction: row;
@@ -109,10 +118,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
     border: 1px solid #f2f2f2;
     border-radius: 30px;
-
     height: 24px;
     width: 57px;
     gap: 4px;
@@ -139,34 +146,34 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .creator-card {
-        width: calc((100% - 20px) / 2);
+        width: calc((100% - 22px) / 2);
     }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .creator-card {
-        width: calc((100% - 38px) / 3);
+        width: calc((100% - 40px) / 3);
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1264px and up) */
 @media only screen and (min-width: 1264px) {
     .creator-card {
-        width: calc((100% - 56px) / 4);
+        width: calc((100% - 58px) / 4);
     }
 }
 
 /* Extra large devices (desktops, 1600px and up) */
 @media only screen and (min-width: 1600px) {
     .creator-card {
-        width: calc((100% - 74px) / 5);
+        width: calc((100% - 76px) / 5);
     }
 }
 
 /* Extra large devices (desktops, 1900px and up) */
 @media only screen and (min-width: 1900px) {
     .creator-card {
-        width: calc((100% - 92px) / 6);
+        width: calc((100% - 94px) / 6);
     }
 }
