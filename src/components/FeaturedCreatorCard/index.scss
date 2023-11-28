@@ -19,7 +19,7 @@
             right: 16px;
             display: flex;
             flex-direction: row;
-            justify-content: end;
+            justify-content: flex-end;
 
             .creator-card-slide-favorite {
                 display: flex;
@@ -48,7 +48,7 @@
             left: 16px;
             display: flex;
             flex-direction: row;
-            align-items: end;
+            align-items: flex-end;
             gap: 10px;
             z-index: 1000;
             cursor: pointer;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
-import styled from "@emotion/styled";
+import styled from 'styled-components';
 import { Slide } from "react-slideshow-image";
 
 import "react-slideshow-image/dist/styles.css";
