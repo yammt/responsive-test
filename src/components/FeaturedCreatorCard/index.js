@@ -1,9 +1,9 @@
 import React from "react";
 import { Button } from "@mui/material";
-import styled from 'styled-components';
+import styled from "@emotion/styled";
 import { Slide } from "react-slideshow-image";
 
-import "react-slideshow-image/dist/styles.css";
+import 'react-slideshow-image/dist/styles.css';
 import "./index.scss";
 
 const SlideSection = styled.div`
